@@ -10,7 +10,7 @@ import java.util.Locale;
  * @author cy
  *
  */
-public interface IClientPreference extends IPreference {
+public interface IClientPreferences extends IPreference {
 
 	/**============================================================
 	 |																|
@@ -57,10 +57,11 @@ public interface IClientPreference extends IPreference {
     /*--------------------------------------------------------------------------------------*/
     
     /**============================================================
-	 |																|
-	 |			    	M E T H O D  A R E A   						|
-	 |																|
+	 |																                                  |
+	 |			    	M E T H O D  A R E A   						                          |
+	 |																                                  |
 	 ================================================================*/
+    
     boolean getPrintEntityChange();
 
     boolean defaultAutoejectDisabled();

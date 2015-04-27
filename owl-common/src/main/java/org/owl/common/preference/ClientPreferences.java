@@ -3,6 +3,7 @@
  */
 package org.owl.common.preference;
 
+import java.io.File;
 import java.io.PrintWriter;
 import java.util.Locale;
 
@@ -11,10 +12,38 @@ import java.util.Locale;
  *
  */
 public class ClientPreferences extends PreferenceProxy implements
-		IClientPreference {
+		IClientPreferences {
 
-	ClientPreferences(IPreference preference){
-		this.preference = preference;
+	ClientPreferences(IPreference store){
+		this.preference = store;
+		store.setDefault(LAST_CONNECT_ADDR, "localhost");
+        store.setDefault(LAST_CONNECT_PORT, 2346);
+        store.setDefault(LAST_SERVER_PORT, 2346);
+        store.setDefault(MAP_TILESET, "atmospheric.tileset");
+//        store.setDefault(MAX_PATHFINDER_TIME,MovePath.DEFAULT_PATHFINDER_TIME_LIMIT);
+        store.setDefault(DATA_DIRECTORY, "data");
+        store.setDefault(LOG_DIRECTORY, "logs");
+        store.setDefault(MECH_DIRECTORY, store.getDefaultString(DATA_DIRECTORY)
+                + File.separator + "mechfiles");
+        store.setDefault(METASERVER_NAME,
+                "http://stormy-light-2818.herokuapp.com/announce");
+        store.setDefault(GAMELOG_KEEP, true);
+        store.setDefault(GAMELOG_FILENAME, "gamelog.html");
+        // store.setDefault(GAMELOG_MAX_SIZE, 1);
+        store.setDefault(STAMP_FORMAT, "_yyyy-MM-dd_HH-mm-ss");
+        store.setDefault(UNIT_START_CHAR, 'A');
+        store.setDefault(GUI_NAME, "swing");
+        store.setDefault(USE_AVERAGE_SKILLS, true);
+        store.setDefault(GENERATE_NAMES, true);
+        store.setDefault(PRINT_ENTITY_CHANGE, false);
+        store.setDefault(BOARD_WIDTH, 16);
+        store.setDefault(BOARD_HEIGHT, 17);
+        store.setDefault(MAP_WIDTH, 1);
+        store.setDefault(MAP_HEIGHT, 1);
+        store.setDefault(DEBUG_OUTPUT_ON,false);
+        store.setDefault(MEMORY_DUMP_ON,false);
+        setLocale(store.getString(LOCALE));
+//        setMekHitLocLog();
 	}
 	
 	/* (non-Javadoc)

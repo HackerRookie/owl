@@ -204,8 +204,8 @@ public class PreferenceProxy implements IPreference {
 	/* (non-Javadoc)
 	 * @see org.owl.common.preference.IPreference#getAdvancedPreferences()
 	 */
-	public String[] getAdvancedPreferences() {
-		return preference.getAdvancedPreferences();
+	public String[] getAdvancedProperties() {
+		return preference.getAdvancedProperties();
 	}
 
 }

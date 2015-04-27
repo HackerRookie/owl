@@ -9,5 +9,5 @@ package org.owl.common.preference;
  */
 public interface IPreferenceChangeListener {
 
-	public void preference(PreferenceChangeEvent event);
+	public abstract void preferenceChange(PreferenceChangeEvent event);
 }

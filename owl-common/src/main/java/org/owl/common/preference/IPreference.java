@@ -97,5 +97,5 @@ public interface IPreference {
 	
 	public void putValue(String name, String value);
 	
-	public String[] getAdvancedPreferences();
+	public String[] getAdvancedProperties();
 }
